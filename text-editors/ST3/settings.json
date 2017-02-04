@@ -1,0 +1,69 @@
+{
+    "auto_complete_commit_on_tab": false,
+    "bold_folder_labels": true,
+    "caret_style": "phase",
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "detect_indentation": false,
+    "draw_white_space": "all",
+    "fallback_encoding": "UTF-8",
+    "file_exclude_patterns":
+    [
+        "*.pyc",
+        "*.pyo",
+        "*.exe",
+        "*.dll",
+        "*.obj",
+        "*.o",
+        "*.a",
+        "*.lib",
+        "*.so",
+        "*.dylib",
+        "*.ncb",
+        "*.sdf",
+        "*.suo",
+        "*.pdb",
+        "*.idb",
+        ".DS_Store",
+        "*.class",
+        "*.psd",
+        "*.db"
+    ],
+    "folder_exclude_patterns":
+    [
+        ".svn",
+        ".hg",
+        "CVS",
+        ".hgcheck",
+        ".git"
+    ],
+    "font_face": "M+ 2m light",
+    "font_size": 14,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "line_padding_bottom": 1,
+    "line_padding_top": 2,
+    "match_brackets": true,
+    "match_brackets_angle": true,
+    "match_brackets_braces": true,
+    "match_brackets_content": true,
+    "match_brackets_square": true,
+    "rulers":
+    [
+        80,
+        120
+    ],
+    "scroll_past_end": true,
+    "show_full_path": true,
+    "tab_size": 4,
+    "tabs_small": true,
+    "theme": "Material-Theme.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "vintage_ctrl_keys": true,
+    "vintage_start_in_command_mode": false,
+    "word_wrap": true
+}
