@@ -88,7 +88,10 @@ alias la="ls -AG"
 alias l="ls -FG"
 alias ls="ls -G"
 
-alias hosts="sudo st /private/etc/hosts"
-
 alias st='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
+alias edit_hosts="sudo st /private/etc/hosts"
+alias edit_httpd='sudo st /etc/apache2/httpd.conf'
+alias edit_php='sudo st /etc/php.ini'
+
+alias go_desktop="cd /Users/marco/Desktop/"
