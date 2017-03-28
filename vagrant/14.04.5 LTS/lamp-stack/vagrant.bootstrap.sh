@@ -37,6 +37,16 @@ VHOST=$(cat <<EOF
     AllowOverride All
   </Directory>
 </VirtualHost>
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /vagrant/tests
+    ServerName tests.local
+    <Directory /vagrant/tests>
+        AllowOverride All
+        Options -Indexes +FollowSymLinks
+        Require all granted
+    </Directory>
+</VirtualHost>
 EOF
 )
 echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
@@ -71,6 +81,10 @@ EOF
 
 # Enabling php modules
 php5enmod mcrypt
+
+# Changing php.ini to display all errors
+sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/fpm/php.ini
+sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
 
 # Triggering changes in apache
 a2enconf php5-fpm
