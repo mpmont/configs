@@ -114,8 +114,6 @@ debconf-set-selections <<< 'phpmyadmin phpmyadmin/reconfigure-webserver multisel
 
 # Install PHPMyAdmin
 apt-get install -y phpmyadmin
-
-# Make Composer available globally
 ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 
 # Restarting apache to make changes
@@ -131,4 +129,6 @@ apt-get install -y git
 
 # Install Composer
 curl -s https://getcomposer.org/installer | php
+
+# Make Composer available globally
 mv composer.phar /usr/local/bin/composer
