@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# ---------------------------------------
-#          Virtual Machine Setup
-# ---------------------------------------
+# MACHINE SETUP
 
 # Adding multiverse sources.
 cat > /etc/apt/sources.list.d/multiverse.list << EOF
@@ -11,13 +9,10 @@ deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse
 deb http://security.ubuntu.com/ubuntu trusty-security multiverse
 EOF
 
-
-# Updating packages
 apt-get update
 
-# ---------------------------------------
-#          Apache Setup
-# ---------------------------------------
+
+# APACHE SETUP
 
 # Installing Packages
 apt-get install -y apache2 libapache2-mod-fastcgi apache2-mpm-worker
@@ -55,9 +50,7 @@ echo "${VHOST}" > /etc/apache2/sites-enabled/000-default.conf
 a2enmod actions fastcgi rewrite
 service apache2 reload
 
-# ---------------------------------------
-#          PHP Setup
-# ---------------------------------------
+# PHP SETUP
 
 # Installing packages
 apt-get install -y php5 php5-cli php5-fpm curl php5-curl php5-mcrypt php5-xdebug
@@ -90,9 +83,7 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/fpm/php.ini
 a2enconf php5-fpm
 service apache2 reload
 
-# ---------------------------------------
-#          MySQL Setup
-# ---------------------------------------
+# MYSQL SETUP
 
 # Setting MySQL root user password root/root
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
@@ -101,9 +92,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 # Installing packages
 apt-get install -y mysql-server mysql-client php5-mysql
 
-# ---------------------------------------
-#          PHPMyAdmin setup
-# ---------------------------------------
+# PHPMYADMIN SETUP
 
 # Default PHPMyAdmin Settings
 debconf-set-selections <<< 'phpmyadmin phpmyadmin/dbconfig-install boolean true'
@@ -119,10 +108,7 @@ ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 # Restarting apache to make changes
 service apache2 restart
 
-
-# ---------------------------------------
-#       Tools Setup.
-# ---------------------------------------
+# TOOLS
 
 # Installing GIT
 apt-get install -y git
